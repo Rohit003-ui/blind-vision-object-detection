@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OpenCV Blind Vision - Computer Vision AI for Visually Impaired</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">👁️ OpenCV Blind Vision</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#live-detection">Live Demo</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="homepage" id="home">
+    <div class="left-section">
+        <h1>Real-time Vision for the Visually Impaired</h1>
+        <p>Experience cutting-edge computer vision powered by OpenCV and SSD MobileNet V3. Instant object detection with real-time audio commentary to empower independent living.</p>
+        <div class="hero-actions">
+            <button class="try-button primary">🚀 Launch Live Detection</button>
+            <a href="#live-detection" class="secondary-btn">Learn More</a>
+        </div>
+    </div>
+    <div class="right-section">
+        <img src="img.png" alt="Blind Vision AI Demonstration" class="character-img">
+    </div>
+</section>
+
+<!-- LIVE OPENCV DETECTION SECTION -->
+<section class="detection-section" id="live-detection">
+    <div class="section-header">
+        <h2>Live OpenCV Object Detection Feed</h2>
+        <p>Click "Start Camera" below to activate your webcam, run real-time object detection, and hear live voice feedback.</p>
+    </div>
+
+    <div class="detection-viewer-card">
+        <div class="viewer-topbar">
+            <div id="status-badge" class="status-badge inactive">○ DETECTION OFF</div>
+            <div class="topbar-info">
+                <span>Model: SSD MobileNet V3 (COCO)</span>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div id="stream-placeholder" class="stream-placeholder">
+                <div class="placeholder-content">
+                    <span class="icon">📷</span>
+                    <h3>Webcam Detection Offline</h3>
+                    <p>Click <strong>Start Camera</strong> to launch live computer vision analysis.</p>
+                </div>
+            </div>
+            <img id="video-stream" class="video-stream" src="" alt="Live Video Feed" style="display: none;">
+        </div>
+
+        <div class="viewer-controls">
+            <button id="start-detection-btn" class="ctrl-btn start">▶ Start Camera</button>
+            <button id="stop-detection-btn" class="ctrl-btn stop">⏹ Stop Camera</button>
+            <button id="toggle-audio-btn" class="ctrl-btn audio">🔊 Audio Feedback: ON</button>
+        </div>
+
+        <div class="live-objects-panel">
+            <h4>Live Detected Objects:</h4>
+            <div id="detections-list" class="detections-list">
+                <span class="empty-msg">No active camera stream</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-page" id="about">
+    <div class="title">
+        <h1>About OpenCV Blind Vision</h1>
+    </div>
+    <p>OpenCV Projects is dedicated to showcasing the power and potential of computer vision technology. Our mission is to provide intelligent assistive software for visually impaired individuals, giving them greater situational awareness through real-time camera processing and text-to-speech audio guidance.</p>
+    
+    <div class="about-grid">
+        <div class="about-card">
+            <h3>👁️ Real-time Detection</h3>
+            <p>Processes live video feeds using deep learning Object Detection models (SSD MobileNet V3) to identify objects, obstacles, and people instantaneously.</p>
+        </div>
+        <div class="about-card">
+            <h3>🔊 Voice Commentary</h3>
+            <p>Converts detected object labels into natural spoken audio via text-to-speech engine, allowing users to listen to their surroundings seamlessly.</p>
+        </div>
+        <div class="about-card">
+            <h3>⚡ High Efficiency</h3>
+            <p>Optimized with Non-Maximum Suppression (NMS) and threaded frame generation for lightweight performance across desktop and web environments.</p>
+        </div>
+    </div>
+</section>
+
+<section class="projects-page" id="projects">
+    <div class="title">
+        <h1>Assistive Features & Guide</h1>
+    </div>
+    <p>This project serves as an end-to-end computer vision solution for visually impaired users. Follow the simple steps below to get started:</p>
+
+    <div class="guide-steps">
+        <div class="step-card">
+            <span class="step-num">1</span>
+            <h4>Connect Camera</h4>
+            <p>Ensure your device has a working webcam or external USB camera connected.</p>
+        </div>
+        <div class="step-card">
+            <span class="step-num">2</span>
+            <h4>Start Live Stream</h4>
+            <p>Click "Start Camera" above to activate the OpenCV detection pipeline.</p>
+        </div>
+        <div class="step-card">
+            <span class="step-num">3</span>
+            <h4>Listen to Audio</h4>
+            <p>Listen as the AI announces objects detected around you in real time.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-page" id="contact">
+    <div class="title">
+        <h1>Contact Us</h1>
+    </div>
+    <h2>We Want to Hear From You!</h2>
+    <p>Your feedback is important to us. Please share your experiences, ideas, or any issues you face while using our OpenCV project.</p>
+    
+    <div id="contact-response" class="contact-alert" style="display: none;"></div>
+
+    <form class="contact-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Type your message or feedback here..."></textarea>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="submit-button">Send Message</button>
+        </div>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 OpenCV Blind Vision Project. Built with OpenCV, Python, and Modern Web Standards.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
